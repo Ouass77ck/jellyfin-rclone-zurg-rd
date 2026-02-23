@@ -1,0 +1,28 @@
+zurg: v1
+token: your-rd-api-key
+port: 9999
+# retain_folder_name_extension: false
+update_interval_progres: 30s
+enable_repair: true
+auto_delete_rar_torrents: true
+
+directories:
+  anime:
+    group_order: 10
+    group: media
+    filters:
+      - regex: /\b[a-fA-F0-9]{8}\b/
+      - any_file_inside_regex: /\b[a-fA-F0-9]{8}\b/
+
+  shows:
+    group_order: 20
+    group: media
+    filters:
+      - has_episodes: true
+
+  movies:
+    group_order: 30
+    group: media
+    only_show_the_biggest_file: true
+    filters:
+      - regex: /.*/
