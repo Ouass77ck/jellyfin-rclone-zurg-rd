@@ -26,9 +26,17 @@ services:
       - SYS_ADMIN
     security_opt:
       - apparmor:unconfined
-    command: "mount zurg: /data --allow-other --allow-non-empty --dir-cache-time 10s --vfs-cache-mode full"
+    command: "mount zurg: /data --allow-other --allow-non-empty --vfs-cache-mode full -vv --log-file /dev/stdout"
+
     depends_on:
       - zurg
+    healthcheck:
+      test: ["CMD", "ls", "/data/shows"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
 
   jellyfin:
     image: jellyfin/jellyfin:latest
