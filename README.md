@@ -153,7 +153,7 @@ sudo umount -l /mnt/zurg
 docker-compose up -d zurg rclone
 # Wait 15s, then start Jellyfin
 docker-compose up -d jellyfin npm
-
+```
 ## Possible questions
 
 
