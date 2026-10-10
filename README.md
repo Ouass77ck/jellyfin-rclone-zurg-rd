@@ -119,6 +119,7 @@ docker-compose up -d zurg rclone
 # Wait 10-15 seconds for the FUSE mount to establish, you can verify with 'ls /mnt/zurg'
 docker-compose up -d jellyfin npm
 
+```
 
 
 ## Troubleshooting
@@ -139,13 +140,6 @@ docker logs jellyfin
 
 
 **Fixing a frozen mount (Stale File Handle / Input-Output Error):**
-If Jellyfin loses access to the files but the containers are still running, the FUSE mount has likely crashed. Do not restart Jellyfin directly. Instead, force unmount the directory:
-```bash
-docker-compose down
-sudo umount -l /mnt/zurg
-docker-compose up -d zurg rclone
-# Wait 15s, then start Jellyfin
-docker-compose up -d jellyfin npm**Fixing a frozen mount (Stale File Handle / Input-Output Error):**
 If Jellyfin loses access to the files but the containers are still running, the FUSE mount has likely crashed. Do not restart Jellyfin directly. Instead, force unmount the directory:
 ```bash
 docker-compose down
