@@ -1,7 +1,7 @@
 version: '3.8'
-services:  
+services:
   zurg:
-    image: ghcr.io/debridmediamanager/zurg-testing:latest    
+    image: ghcr.io/debridmediamanager/zurg-testing:latest
     container_name: zurg
     restart: unless-stopped
     ports:
@@ -62,6 +62,5 @@ services:
       - ./npm-data:/data
       - ./npm-data/letsencrypt:/etc/letsencrypt
 
-  
 volumes:
   zurgdata:

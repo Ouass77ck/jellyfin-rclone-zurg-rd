@@ -4,9 +4,16 @@ port: 9999
 # retain_folder_name_extension: false
 update_interval_progres: 30s
 enable_repair: true
-auto_delete_rar_torrents: true
+auto_delete_rar_torrents: false
 
 directories:
+
+  kai:
+    group_order: 5
+    group: media
+    filters:
+      - regex: /yaba[iï]|kaï|titou/i
+
   anime:
     group_order: 10
     group: media
